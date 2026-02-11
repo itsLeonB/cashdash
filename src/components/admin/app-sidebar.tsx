@@ -55,7 +55,7 @@ export function AppSidebar() {
             >
               <Link to="/">
                 <Shell className="!size-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <span className="text-base font-semibold">Cashus</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -147,7 +147,7 @@ export const ResourceMenuItem = ({
     return <Skeleton className="h-8 w-full" />;
   }
 
-  if (!resources || !resources[name] || !canAccess) return null;
+  if (!resources?.[name] || !canAccess) return null;
 
   return (
     <SidebarMenuItem>

@@ -1,0 +1,6 @@
+const config = {
+  baseUrl:
+    import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/admin/v1",
+};
+
+export default config;

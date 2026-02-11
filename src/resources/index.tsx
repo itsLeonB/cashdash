@@ -1,7 +1,8 @@
 import plansResource from "./plans";
+import planVersionsResource from "./planVersions";
 
 const resources = () => {
-  return plansResource();
+  return [plansResource(), planVersionsResource()];
 };
 
 export default resources;

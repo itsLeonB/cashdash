@@ -8,7 +8,11 @@ const TimestampField = ({ propertyName }: TimestampFieldProps) => {
   return (
     <RecordField
       source={propertyName}
-      render={(record) => new Date(record[propertyName]).toLocaleString()}
+      render={(record) =>
+        record[propertyName]
+          ? new Date(record[propertyName]).toLocaleString()
+          : "-"
+      }
     />
   );
 };

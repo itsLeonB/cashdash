@@ -8,7 +8,11 @@ const TimestampCol = ({ propertyName }: TimestampColProps) => {
   return (
     <DataTable.Col
       source={propertyName}
-      render={(record) => new Date(record[propertyName]).toLocaleString()}
+      render={(record) =>
+        record[propertyName]
+          ? new Date(record[propertyName]).toLocaleString()
+          : "-"
+      }
     />
   );
 };

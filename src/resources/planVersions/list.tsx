@@ -56,6 +56,24 @@ const PlanList = () => {
     }
   };
 
+  const confirmationDialogContent = () => {
+    if (!selectedPlan) return null;
+    if (defaultPlan)
+      return (
+        <>
+          This will replace <strong>{recordRepresentation(defaultPlan)}</strong>{" "}
+          as the default plan with{" "}
+          <strong>{recordRepresentation(selectedPlan)}</strong>.
+        </>
+      );
+    return (
+      <>
+        This will set <strong>{recordRepresentation(selectedPlan)}</strong> as
+        the default plan.
+      </>
+    );
+  };
+
   return (
     <List>
       {!isLoading && data && !hasDefaultPlan && (
@@ -74,22 +92,7 @@ const PlanList = () => {
         onClose={() => setShowConfirmDialog(false)}
         onConfirm={confirmSetDefault}
         title="Change Default Plan"
-        content={
-          defaultPlan ? (
-            <>
-              This will replace{" "}
-              <strong>{recordRepresentation(defaultPlan)}</strong> as the
-              default plan with{" "}
-              <strong>{recordRepresentation(selectedPlan!)}</strong>.
-            </>
-          ) : (
-            <>
-              This will set{" "}
-              <strong>{recordRepresentation(selectedPlan!)}</strong> as the
-              default plan.
-            </>
-          )
-        }
+        content={confirmationDialogContent()}
       />
 
       <DataTable>

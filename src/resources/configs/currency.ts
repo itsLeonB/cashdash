@@ -1,6 +1,6 @@
 export const supportedCurrencies = ["IDR", "USD", "SGD"];
 
-export const numberFormatByCurrency = supportedCurrencies.reduce(
+const numberFormatByCurrency = supportedCurrencies.reduce(
   (acc, currency) => {
     acc[currency] = new Intl.NumberFormat("en-US", {
       style: "currency",

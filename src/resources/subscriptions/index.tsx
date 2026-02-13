@@ -2,7 +2,7 @@ import { Resource } from "ra-core";
 import SubscriptionCreate from "./create";
 import SubscriptionList from "./list";
 import SubscriptionShow from "./show";
-import PlanEdit from "./edit";
+import SubscriptionEdit from "./edit";
 import { DollarSign } from "lucide-react";
 
 const subscriptionsResource = () => {
@@ -10,7 +10,7 @@ const subscriptionsResource = () => {
     <Resource
       name="subscriptions"
       list={SubscriptionList}
-      edit={PlanEdit}
+      edit={SubscriptionEdit}
       show={SubscriptionShow}
       create={SubscriptionCreate}
       recordRepresentation={(record) =>

@@ -2,7 +2,7 @@ import { DataTable, List } from "@/components/admin";
 import TimestampCol from "../components/TimestampCol";
 import { formatCurrency } from "../configs/currency";
 import { capitalize } from "lodash";
-import { useGetList, useUpdate } from "ra-core";
+import { useGetList, useRefresh, useUpdate } from "ra-core";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertTriangle, Star, StarOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,8 +12,9 @@ import { Confirm } from "@/components/admin/confirm";
 import { Plan, recordRepresentation } from "./utils";
 
 const PlanList = () => {
-  const { data, isLoading, refetch } = useGetList("plan-versions");
+  const { data, isLoading } = useGetList("plan-versions");
   const [update] = useUpdate();
+  const refresh = useRefresh();
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
 
@@ -29,27 +30,23 @@ const PlanList = () => {
     try {
       if (!selectedPlan) return;
 
-      // If there's an existing default plan, remove its default status
-      if (defaultPlan) {
-        await update("plan-versions", {
-          id: defaultPlan.id,
-          data: { ...defaultPlan, isDefault: false },
-          previousData: defaultPlan,
-        });
-      }
+      await update(
+        "plan-versions",
+        {
+          id: selectedPlan.id,
+          data: { ...selectedPlan, isDefault: true },
+          previousData: selectedPlan,
+        },
+        {
+          mutationMode: "pessimistic",
+        },
+      );
 
-      // Set the selected plan as default
-      await update("plan-versions", {
-        id: selectedPlan.id,
-        data: { ...selectedPlan, isDefault: true },
-        previousData: selectedPlan,
-      });
+      refresh();
 
       toast.success(
         `${selectedPlan.planName} has been set as the default plan.`,
       );
-
-      refetch();
     } catch (error) {
       console.error("Error updating default plan:", error);
       toast.error("Failed to update default plan.");
@@ -57,10 +54,6 @@ const PlanList = () => {
       setShowConfirmDialog(false);
       setSelectedPlan(null);
     }
-  };
-
-  const getRowClassName = (record: Plan) => {
-    return record.isDefault ? "bg-yellow-10" : "";
   };
 
   return (
@@ -99,7 +92,7 @@ const PlanList = () => {
         }
       />
 
-      <DataTable rowClassName={getRowClassName}>
+      <DataTable>
         <DataTable.Col
           source="isDefault"
           label="Default"

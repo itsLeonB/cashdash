@@ -5,7 +5,7 @@ import {
   DateTimeInput,
 } from "@/components/admin";
 
-const PlanEdit = () => (
+const SubscriptionEdit = () => (
   <Edit>
     <SimpleForm>
       <div className="flex flex-col gap-4">
@@ -26,4 +26,4 @@ const PlanEdit = () => (
   </Edit>
 );
 
-export default PlanEdit;
+export default SubscriptionEdit;

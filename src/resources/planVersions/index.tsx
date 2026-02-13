@@ -3,6 +3,7 @@ import PlanVersionCreate from "./create";
 import PlanList from "./list";
 import PlanShow from "./show";
 import PlanEdit from "./edit";
+import { recordRepresentation } from "./utils";
 
 const planVersionsResource = () => {
   return (
@@ -13,7 +14,7 @@ const planVersionsResource = () => {
       show={PlanShow}
       create={PlanVersionCreate}
       options={{ label: "Plan Versions" }}
-      recordRepresentation={(record) => `${record?.planName}#${record?.id}`}
+      recordRepresentation={recordRepresentation}
     />
   );
 };

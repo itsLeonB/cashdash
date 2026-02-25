@@ -1,9 +1,4 @@
-import {
-  Create,
-  DateTimeInput,
-  ReferenceInput,
-  SimpleForm,
-} from "@/components/admin";
+import { Create, ReferenceInput, SimpleForm } from "@/components/admin";
 
 const SubscriptionCreate = () => (
   <Create>
@@ -19,7 +14,6 @@ const SubscriptionCreate = () => (
           reference="plan-versions"
           label="Plan version"
         />
-        <DateTimeInput source="endsAt" />
       </div>
     </SimpleForm>
   </Create>

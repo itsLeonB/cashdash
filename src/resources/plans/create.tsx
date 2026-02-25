@@ -5,7 +5,7 @@ const PlanCreate = () => (
   <Create>
     <SimpleForm>
       <TextInput source="name" label="Name" validate={required()} />
-      <NumberInput source="priority" validate={(required(), minValue(1))} />
+      <NumberInput source="priority" validate={[required(), minValue(1)]} />
     </SimpleForm>
   </Create>
 );

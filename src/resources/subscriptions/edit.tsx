@@ -3,6 +3,7 @@ import {
   SimpleForm,
   ReferenceInput,
   DateTimeInput,
+  TextInput,
 } from "@/components/admin";
 
 const SubscriptionEdit = () => (
@@ -19,6 +20,7 @@ const SubscriptionEdit = () => (
           reference="plan-versions"
           label="Plan version"
         />
+        <TextInput source="status" />
         <DateTimeInput source="currentPeriodStart" />
         <DateTimeInput source="currentPeriodEnd" />
       </div>

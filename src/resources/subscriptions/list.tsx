@@ -6,6 +6,7 @@ const SubscriptionList = () => (
     <DataTable>
       <DataTable.Col source="profileName" label="Profile" />
       <DataTable.Col source="planName" label="Plan" />
+      <DataTable.Col source="status" />
       <TimestampCol propertyName="currentPeriodStart" />
       <TimestampCol propertyName="currentPeriodEnd" />
       <TimestampCol propertyName="createdAt" />

@@ -24,6 +24,7 @@ const SubscriptionShow = () => (
           </LinkBase>
         )}
       />
+      <RecordField source="status" />
       <TimestampField propertyName="currentPeriodStart" />
       <TimestampField propertyName="currentPeriodEnd" />
     </div>

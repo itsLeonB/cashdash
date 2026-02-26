@@ -27,6 +27,8 @@ const SubscriptionShow = () => (
       <RecordField source="status" />
       <TimestampField propertyName="currentPeriodStart" />
       <TimestampField propertyName="currentPeriodEnd" />
+      <TimestampField propertyName="createdAt" />
+      <TimestampField propertyName="updatedAt" />
     </div>
   </Show>
 );

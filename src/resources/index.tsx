@@ -1,3 +1,4 @@
+import paymentsResource from "./payments";
 import plansResource from "./plans";
 import planVersionsResource from "./planVersions";
 import profilesResource from "./profiles";
@@ -8,6 +9,7 @@ const resources = () => {
     plansResource(),
     planVersionsResource(),
     subscriptionsResource(),
+    paymentsResource(),
     profilesResource(),
   ];
 };

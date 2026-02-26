@@ -6,6 +6,7 @@ const PlanList = () => (
   <List>
     <DataTable>
       <DataTable.Col source="name" />
+      <DataTable.Col source="priority" />
       <DataTable.Col
         source="isActive"
         label="Is active?"

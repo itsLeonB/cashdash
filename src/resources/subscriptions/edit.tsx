@@ -19,8 +19,8 @@ const SubscriptionEdit = () => (
           reference="plan-versions"
           label="Plan version"
         />
-        <DateTimeInput source="endsAt" />
-        <DateTimeInput source="canceledAt" />
+        <DateTimeInput source="currentPeriodStart" />
+        <DateTimeInput source="currentPeriodEnd" />
       </div>
     </SimpleForm>
   </Edit>

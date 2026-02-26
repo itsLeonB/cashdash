@@ -24,8 +24,8 @@ const SubscriptionShow = () => (
           </LinkBase>
         )}
       />
-      <TimestampField propertyName="endsAt" />
-      <TimestampField propertyName="canceledAt" />
+      <TimestampField propertyName="currentPeriodStart" />
+      <TimestampField propertyName="currentPeriodEnd" />
     </div>
   </Show>
 );

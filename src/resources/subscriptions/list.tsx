@@ -6,8 +6,8 @@ const SubscriptionList = () => (
     <DataTable>
       <DataTable.Col source="profileName" label="Profile" />
       <DataTable.Col source="planName" label="Plan" />
-      <TimestampCol propertyName="endsAt" />
-      <TimestampCol propertyName="canceledAt" />
+      <TimestampCol propertyName="currentPeriodStart" />
+      <TimestampCol propertyName="currentPeriodEnd" />
       <TimestampCol propertyName="createdAt" />
       <TimestampCol propertyName="updatedAt" />
     </DataTable>

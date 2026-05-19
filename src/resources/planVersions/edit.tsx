@@ -5,6 +5,7 @@ import {
   AutocompleteInput,
   NumberInput,
   DateTimeInput,
+  TextInput,
 } from "@/components/admin";
 import { minValue, required } from "ra-core";
 import { supportedCurrencies } from "../configs/currency";
@@ -63,6 +64,11 @@ const PlanEdit = () => (
           />
           <DateTimeInput source="effectiveTo" label="Effective to" />
         </div>
+        <TextInput
+          source="stripePriceId"
+          label="Stripe Price ID"
+          helperText="e.g. price_1Abc123... (from Stripe Dashboard)"
+        />
       </div>
     </SimpleForm>
   </Edit>

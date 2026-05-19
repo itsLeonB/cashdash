@@ -35,6 +35,7 @@ const PlanShow = () => (
           label="Bill uploads monthly limit"
         />
       </div>
+      <RecordField source="stripePriceId" label="Stripe Price ID" />
       <div className="flex gap-8">
         <TimestampField propertyName="effectiveFrom" />
         <TimestampField propertyName="effectiveTo" />

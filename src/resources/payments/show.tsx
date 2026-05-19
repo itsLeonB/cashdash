@@ -18,6 +18,7 @@ const PaymentShow = () => (
       <RecordField source="status" />
       <RecordField source="currency" />
       <RecordField source="amount" />
+      <RecordField source="gatewaySubscriptionId" label="Stripe Subscription ID" />
       <TimestampField propertyName="startsAt" />
       <TimestampField propertyName="endsAt" />
       <TimestampField propertyName="paidAt" />

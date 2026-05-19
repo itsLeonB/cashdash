@@ -25,6 +25,7 @@ const SubscriptionShow = () => (
         )}
       />
       <RecordField source="status" />
+      <RecordField source="stripeCustomerId" label="Stripe Customer ID" />
       <TimestampField propertyName="currentPeriodStart" />
       <TimestampField propertyName="currentPeriodEnd" />
       <TimestampField propertyName="createdAt" />

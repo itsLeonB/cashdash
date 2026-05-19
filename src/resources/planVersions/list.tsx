@@ -153,6 +153,7 @@ const PlanList = () => {
           source="billUploadsMonthly"
           label="Bill uploads monthly limit"
         />
+        <DataTable.Col source="stripePriceId" label="Stripe Price ID" />
         <TimestampCol propertyName="effectiveFrom" />
         <TimestampCol propertyName="effectiveTo" />
         <TimestampCol propertyName="createdAt" />
